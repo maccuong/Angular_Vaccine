@@ -1,0 +1,262 @@
+<div class="site-wrap">
+  <div class="site-navbar py-2">
+    <div class="search-wrap">
+      <div class="container">
+        <a href="#" class="search-close js-search-close"
+          ><span class="icon-close2"></span
+        ></a>
+        <form action="#" method="post">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search keyword and hit enter..."
+          />
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <div class="site-logo">
+            <a href="index.html" class="js-logo-clone">VNVC Việt Nam</a>
+          </div>
+        </div>
+        <div class="main-nav d-none d-lg-block">
+          <nav
+            class="site-navigation text-right text-md-center"
+            role="navigation"
+          >
+            <ul class="site-menu js-clone-nav d-none d-lg-block">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shop.html">Store</a></li>
+              <li class="has-children">
+                <a href="#">Dropdown</a>
+                <ul class="dropdown">
+                  <li><a href="#">Supplements</a></li>
+                  <li class="has-children">
+                    <a href="#">Vitamins</a>
+                    <ul class="dropdown">
+                      <li><a href="#">Supplements</a></li>
+                      <li><a href="#">Vitamins</a></li>
+                      <li><a href="#">Diet &amp; Nutrition</a></li>
+                      <li><a href="#">Tea &amp; Coffee</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Diet &amp; Nutrition</a></li>
+                  <li><a href="#">Tea &amp; Coffee</a></li>
+                </ul>
+              </li>
+              <li><a href="about.html">About</a></li>
+              <li class="active"><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="icons">
+          <a href="#" class="icons-btn d-inline-block js-search-open"
+            ><span class="icon-search"></span
+          ></a>
+          <a href="cart.html" class="icons-btn d-inline-block bag">
+            <span class="icon-shopping-bag"></span>
+            <span class="number">2</span>
+          </a>
+          <a
+            href="#"
+            class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"
+            ><span class="icon-menu"></span
+          ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-light py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mb-0">
+          <a href="index.html">Trang chủ</a> <span class="mx-2 mb-0">/</span>
+          <strong class="text-black">Đăng nhập</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="h3 mb-5 text-black">
+            Chào mừng bạn đến với VNVC Việt Nam
+          </h2>
+        </div>
+        <div
+          style="
+            width: 690px;
+            height: 430px;
+            border: 1px solid #ccc;
+            margin: 0 18px;
+            margin-left: 200px;
+          "
+        >
+          <div class="col-md-12">
+            <form
+              [formGroup]="loginForm"
+              (ngSubmit)="onSubmit(loginForm.value)"
+              class="form-signin"
+              style="
+                width: 100%;
+                max-width: 600px;
+                margin: 0 auto;
+                margin-bottom: 100px;
+                border: 1px solid #ccc;
+              "
+            >
+              <img
+                class="mb-4"
+                src="/docs/4.5/assets/brand/bootstrap-solid.svg"
+                alt=""
+                width="72"
+                height="72"
+              />
+              <h1
+                class="h3 mb-3 font-weight-normal"
+                style="
+                  color: #2368cf;
+                  padding: 10px;
+                  font-weight: 700;
+                  font-size: 24px;
+                  text-transform: uppercase;
+                  font-family: Arial, Helvetica, sans-serif;
+                "
+              >
+                Đăng Nhập
+              </h1>
+              <label for="inputEmail" class="sr-only">Email</label>
+              <input
+                type="email"
+                id="inputEmail"
+                class="form-control"
+                formControlName="email"
+                placeholder="Email"
+                required
+                autofocus
+              />
+              <div style="height: 10px;"></div>
+              <label for="inputPassword" class="sr-only">Mật khẩu</label>
+              <input
+                type="password"
+                id="inputPassword"
+                class="form-control"
+                formControlName="matKhau"
+                placeholder="Mật khẩu"
+                required
+              />
+              <div class="checkbox mb-3">
+                <label>
+                  <input type="checkbox" value="remember-me" /> Remember me
+                </label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block" type="submit">
+                Đăng nhập
+              </button>
+              <a href="#"><p>Đăng kí tài khoản</p></a>
+              <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-section bg-primary">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-white mb-4">Offices</h2>
+        </div>
+        <div class="col-lg-4">
+          <div class="p-4 bg-white mb-3 rounded">
+            <span class="d-block text-black h6 text-uppercase">New York</span>
+            <p class="mb-0">
+              203 Fake St. Mountain View, San Francisco, California, USA
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="p-4 bg-white mb-3 rounded">
+            <span class="d-block text-black h6 text-uppercase">London</span>
+            <p class="mb-0">
+              203 Fake St. Mountain View, San Francisco, California, USA
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="p-4 bg-white mb-3 rounded">
+            <span class="d-block text-black h6 text-uppercase">Canada</span>
+            <p class="mb-0">
+              203 Fake St. Mountain View, San Francisco, California, USA
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+          <div class="block-7">
+            <h3 class="footer-heading mb-4">About Us</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius
+              quae reiciendis distinctio voluptates sed dolorum excepturi iure
+              eaque, aut unde.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
+          <h3 class="footer-heading mb-4">Quick Links</h3>
+          <ul class="list-unstyled">
+            <li><a href="#">Supplements</a></li>
+            <li><a href="#">Vitamins</a></li>
+            <li><a href="#">Diet &amp; Nutrition</a></li>
+            <li><a href="#">Tea &amp; Coffee</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="block-5 mb-5">
+            <h3 class="footer-heading mb-4">Contact Info</h3>
+            <ul class="list-unstyled">
+              <li class="address">
+                203 Fake St. Mountain View, San Francisco, California, USA
+              </li>
+              <li class="phone">
+                <a href="tel://23923929210">+2 392 3929 210</a>
+              </li>
+              <li class="email">emailaddress@domain.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row pt-5 mt-5 text-center">
+        <div class="col-md-12">
+          <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All rights reserved | This template is made with
+            <i class="icon-heart" aria-hidden="true"></i> by
+            <a href="https://colorlib.com" target="_blank" class="text-primary"
+              >Colorlib</a
+            >
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

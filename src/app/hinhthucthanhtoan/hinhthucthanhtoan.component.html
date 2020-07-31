@@ -1,0 +1,248 @@
+<div class="site-wrap">
+  <div class="site-navbar py-2">
+    <div class="search-wrap">
+      <div class="container">
+        <a href="#" class="search-close js-search-close"
+          ><span class="icon-close2"></span
+        ></a>
+        <form action="#" method="post">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search keyword and hit enter..."
+          />
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <div class="site-logo">
+            <a href="index.html" class="js-logo-clone">VNVC Việt Nam</a>
+          </div>
+        </div>
+        <div class="main-nav d-none d-lg-block">
+          <nav
+            class="site-navigation text-right text-md-center"
+            role="navigation"
+          >
+            <ul class="site-menu js-clone-nav d-none d-lg-block">
+              <li><a href="index.html">Trang chủ</a></li>
+              <li class="has-children">
+                <a href="#">Danh sách gói vắc xin</a>
+                <ul class="dropdown">
+                  <li><a href="#">Supplements</a></li>
+                  <li class="has-children">
+                    <a href="#">Vitamins</a>
+                    <ul class="dropdown">
+                      <li><a href="#">Supplements</a></li>
+                      <li><a href="#">Vitamins</a></li>
+                      <li><a href="#">Diet &amp; Nutrition</a></li>
+                      <li><a href="#">Tea &amp; Coffee</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Diet &amp; Nutrition</a></li>
+                  <li><a href="#">Tea &amp; Coffee</a></li>
+                </ul>
+              </li>
+              <li><a href="about.html">Tra cứu lịch sử tiêm chủng</a></li>
+              <li><a href="contact.html">Bảng giá vắc xin</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="icons">
+          <a href="#" class="icons-btn d-inline-block js-search-open"
+            ><span class="icon-search"></span
+          ></a>
+          <a href="cart.html" class="icons-btn d-inline-block bag">
+            <span class="icon-shopping-bag"></span>
+            <span class="number">2</span>
+          </a>
+          <a
+            href="#"
+            class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"
+            ><span class="icon-menu"></span
+          ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-light py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mb-0">
+          <a href="index.html">Thanh toán</a> <span class="mx-2 mb-0">/</span>
+          <strong class="text-black">Hình thức thanh toán</strong>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-12">
+          <div class="bg-light rounded p-3">
+            <p class="mb-0">
+              Mã đơn hàng của quý khách là: <b>{{donhang.ma_PhieuDmOnline}}</b>
+            </p>
+            <p>Tổng tiền: <b>{{donhang.tongTien}}</b></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-5 mb-md-0">
+          <h2 class="h3 mb-3 text-black">Vui lòng chọn hình thức thanh toán</h2>
+
+          <div style="height: 750px; width: 500px;">
+            <div class="border mb-3">
+              <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse" href="#collapsebank" role="button"
+                  aria-expanded="false" aria-controls="collapsebank">Thanh toán bằng chuyển khoản </a></h3>
+
+              <div class="collapse" id="collapsebank">
+                <div class="clear">
+                  <div style="float: left; margin: 2px 10px 0 0;">
+                      <img src="/assets/images/bankscb.png" />
+                  </div>
+              </div>
+              <div style="float: left;">
+                <strong class="green">SACOMBANK</strong><br />
+                030046936562<br />
+                PGD Tân Quý<br>
+                <div class="text-center"><br>
+                  <strong>Chủ tài khoản:</strong> Mạc Thiện Chí Cường<br />
+                <p>Nội dung chuyển khoản: TTHDVACCINE <b>MAHOADON</b></p>
+                  <em>(Trong đó <strong id="ucPopupMoney_moneyID2">MAHOADON</strong> là Mã hóa đơn của bạn)</em>
+              </div>
+
+            </div>
+                <div class="py-2 px-4">
+
+                </div>
+              </div>
+            </div>
+
+            <div class="border mb-3">
+              <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse" href="#collapsecheque" role="button"
+                  aria-expanded="false" aria-controls="collapsecheque">Thanh toán bằng ví điện tử MOMO</a></h3>
+
+              <div class="collapse" id="collapsecheque">
+                <div class="py-2 px-4">
+                  <img src="/assets/images/vimomo.png" />
+                  <span>Nếu bạn đang sử dụng ví MOMO vui lòng chuyển số tiền cần nạp tới số điện thoại nhận tiền: </span><br /> <strong style="font-size: 30px; line-height: 30px;">0376.700.463</strong><br /><br />
+                  <span>Và Nhập tin nhắn (or) Nội dung chuyển tiền là:</span><br /> <strong class="orange" style="font-size: 30px; line-height: 30px;">TTHDVACCINE <span id="ucPopupMoney_moneyID4">MAHOADON</span></strong><br /><br />
+                  <em>(Trong đó <strong id="ucPopupMoney_moneyID3">MAHOADON</strong> là Mã hóa đơn của bạn)</em>
+                </div>
+              </div>
+            </div>
+            <button style="background-color: aquamarine;" [routerLink]="['/thankyou']"><img src="https://img.icons8.com/fluent/48/000000/withdrawal.png"/>Thanh toán</button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- </form> -->
+    </div>
+  </div>
+
+  <div
+    class="site-section bg-secondary bg-image"
+    style="background-image: url('images/bg_2.jpg');"
+  >
+    <div class="container">
+      <div class="row align-items-stretch">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <a
+            href="#"
+            class="banner-1 h-100 d-flex"
+            style="background-image: url('images/bg_1.jpg');"
+          >
+            <div class="banner-1-inner align-self-center">
+              <h2>Pharma Products</h2>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Molestiae ex ad minus rem odio voluptatem.
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <a
+            href="#"
+            class="banner-1 h-100 d-flex"
+            style="background-image: url('images/bg_2.jpg');"
+          >
+            <div class="banner-1-inner ml-auto align-self-center">
+              <h2>Rated by Experts</h2>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Molestiae ex ad minus rem odio voluptatem.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+          <div class="block-7">
+            <h3 class="footer-heading mb-4">About Us</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius
+              quae reiciendis distinctio voluptates sed dolorum excepturi iure
+              eaque, aut unde.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
+          <h3 class="footer-heading mb-4">Quick Links</h3>
+          <ul class="list-unstyled">
+            <li><a href="#">Supplements</a></li>
+            <li><a href="#">Vitamins</a></li>
+            <li><a href="#">Diet &amp; Nutrition</a></li>
+            <li><a href="#">Tea &amp; Coffee</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="block-5 mb-5">
+            <h3 class="footer-heading mb-4">Contact Info</h3>
+            <ul class="list-unstyled">
+              <li class="address">
+                203 Fake St. Mountain View, San Francisco, California, USA
+              </li>
+              <li class="phone">
+                <a href="tel://23923929210">+2 392 3929 210</a>
+              </li>
+              <li class="email">emailaddress@domain.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row pt-5 mt-5 text-center">
+        <div class="col-md-12">
+          <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All rights reserved | This template is made with
+            <i class="icon-heart" aria-hidden="true"></i> by
+            <a href="https://colorlib.com" target="_blank" class="text-primary"
+              >Colorlib</a
+            >
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

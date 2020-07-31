@@ -1,0 +1,17 @@
+<table class="table site-block-order-table mb-5">
+  <thead>
+    <th>Tên mặt hàng</th>
+    <th>Số lượng</th>
+    <th>giá</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let items of goivcList">
+      <td>{{ items.tenGoi }}</td>
+      <td> {{ items.soLuong }}</td>
+      <td> {{ items.giaGoiTiem }}</td>
+    </tr>
+
+  </tbody>
+
+</table>
+

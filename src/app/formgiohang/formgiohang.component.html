@@ -1,0 +1,322 @@
+<div class="site-wrap">
+  <div class="site-navbar py-2">
+    <div class="search-wrap">
+      <div class="container">
+        <a href="#" class="search-close js-search-close"
+          ><span class="icon-close2"></span
+        ></a>
+        <form action="#" method="post">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search keyword and hit enter..."
+          />
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <div class="site-logo">
+            <a href="index.html" class="js-logo-clone">VNVC Việt Nam</a>
+          </div>
+        </div>
+        <div class="main-nav d-none d-lg-block">
+          <nav
+            class="site-navigation text-right text-md-center"
+            role="navigation"
+          >
+            <ul class="site-menu js-clone-nav d-none d-lg-block">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shop.html">Store</a></li>
+              <li class="has-children">
+                <a href="#">Dropdown</a>
+                <ul class="dropdown">
+                  <li><a href="#">Supplements</a></li>
+                  <li class="has-children">
+                    <a href="#">Vitamins</a>
+                    <ul class="dropdown">
+                      <li><a href="#">Supplements</a></li>
+                      <li><a href="#">Vitamins</a></li>
+                      <li><a href="#">Diet &amp; Nutrition</a></li>
+                      <li><a href="#">Tea &amp; Coffee</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Diet &amp; Nutrition</a></li>
+                  <li><a href="#">Tea &amp; Coffee</a></li>
+                </ul>
+              </li>
+              <li><a href="about.html">About</a></li>
+              <li class="active"><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="icons">
+          <a class="icons-btn d-inline-block bag">
+            <span class="icon-shopping-bag"></span>
+            <span class="number">{{ tongsl }}</span>
+          </a>
+          <button style="margin-left: 20px;" (click)="logout()">
+            <img
+              src="https://img.icons8.com/officexs/16/000000/export.png"
+            />Đăng xuất
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-light py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mb-0">
+          <a href="index.html">Trang chủ</a> <span class="mx-2 mb-0">/</span>
+          <strong class="text-black">Giỏ hàng</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="h3 mb-5 text-black">
+            Thông tin giỏ hàng của bạn
+          </h2>
+        </div>
+        <div
+          style="
+            width: 750px;
+            height: 750px;
+            border: 1px solid #ccc;
+            margin: 0 18px;
+            margin-left: 200px;
+          "
+        >
+          <div class="col-md-12">
+            <p-table
+              [value]="gh_kh"
+              [frozenValue]="gh_kh"
+              [scrollable]="true"
+              scrollHeight="400px"
+            >
+              <ng-template pTemplate="header">
+                <tr>
+                  <th>Ảnh gói vắc xin</th>
+                  <th>Tên gói</th>
+                  <th>Giá gói</th>
+                  <th>Số lượng</th>
+                  <th>Tổng tiền</th>
+                  <th>Chức năng</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-gh_kh>
+                <tr>
+                  <td>
+                    <img
+                      src="{{ gh_kh.anhGoiVc }}"
+                      alt="Image"
+                      style="height: 70px; width: 70px;"
+                    />
+                  </td>
+                  <td>{{ gh_kh.tenGoi }}</td>
+                  <td>
+                    {{
+                      gh_kh.giaGoiTiem | currency: "VND":"symbol":"4.2-2":"fr"
+                    }}
+                  </td>
+                  <td style="display: table; margin-top: 30px;">
+                    <button
+                      class="btn"
+                      style="background-color: midnightblue;"
+                      (click)="deleltetocart(gh_kh.id_GoiVC)"
+                      [disabled]="gh_kh.soLuong < 2 ? true : false"
+                    >
+                      <mat-icon>remove_circle</mat-icon>
+                    </button>
+                    {{ gh_kh.soLuong }}
+                    <button class="btn" (click)="addtocart(gh_kh.id_GoiVC)">
+                      <mat-icon>add_circle</mat-icon>
+                    </button>
+                  </td>
+                  <td>
+                    {{ gh_kh.tongTien | currency: "VND":"symbol":"4.2-2":"fr" }}
+                  </td>
+                  <td>
+                    <button
+                      class="btn"
+                      (click)="xoakhoigiohang(gh_kh.id_GoiVC)"
+                    >
+                      Xóa
+                      <img
+                        src="https://img.icons8.com/cute-clipart/24/000000/delete-sign.png"
+                      />
+                    </button>
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
+            <p-table
+              [value]="gh_vc"
+              [frozenValue]="gh_vc"
+              [scrollable]="true"
+              scrollHeight="400px"
+            >
+              <ng-template pTemplate="body" let-gh_vc>
+                <tr>
+                  <td>
+                    <img
+                      src="{{ gh_vc.anhVaccine }}"
+                      alt="Image"
+                      style="height: 70px; width: 70px;"
+                    />
+                  </td>
+                  <td>{{ gh_vc.tenVaccine }}</td>
+                  <td>
+                    {{ gh_vc.giaBan | currency: "VND":"symbol":"4.2-2":"fr" }}
+                  </td>
+                  <td style="display: table; margin-top: 30px;">
+                    <button
+                      class="btn"
+                      style="background-color: midnightblue;"
+                      (click)="giamSluongVcGH(gh_vc.id_Vaccine)"
+                      [disabled]="gh_vc.soLuong < 2 ? true : false"
+                    >
+                      <mat-icon>remove_circle</mat-icon>
+                    </button>
+                    {{ gh_vc.soLuong }}
+                    <button class="btn" (click)="addVcToCart(gh_vc.id_Vaccine)">
+                      <mat-icon>add_circle</mat-icon>
+                    </button>
+                  </td>
+                  <td>
+                    {{ gh_vc.tongtien | currency: "VND":"symbol":"4.2-2":"fr" }}
+                  </td>
+                  <td>
+                    <button
+                      class="btn"
+                      (click)="xoaVcKhoiGioHang(gh_vc.id_Vaccine)"
+                    >
+                      Xóa
+                      <img
+                        src="https://img.icons8.com/cute-clipart/24/000000/delete-sign.png"
+                      />
+                    </button>
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
+            <h3>
+              Tổng tiền {{ tongtien | currency: "VND":"symbol":"4.2-2":"fr" }}
+            </h3>
+            <p-button
+              label="Tiếp tục mua hàng"
+              styleClass="ui-button-info"
+              [routerLink]="['/dsgoivc']"
+            ></p-button>
+            <p-button
+              label="Thanh toán"
+              styleClass="ui-button-danger"
+              [routerLink]="['/thanhtoan']"
+              style="margin-left: 385px;"
+            ></p-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-section bg-primary">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-white mb-4">Offices</h2>
+        </div>
+        <div class="col-lg-4">
+          <div class="p-4 bg-white mb-3 rounded">
+            <span class="d-block text-black h6 text-uppercase">New York</span>
+            <p class="mb-0">
+              203 Fake St. Mountain View, San Francisco, California, USA
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="p-4 bg-white mb-3 rounded">
+            <span class="d-block text-black h6 text-uppercase">London</span>
+            <p class="mb-0">
+              203 Fake St. Mountain View, San Francisco, California, USA
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="p-4 bg-white mb-3 rounded">
+            <span class="d-block text-black h6 text-uppercase">Canada</span>
+            <p class="mb-0">
+              203 Fake St. Mountain View, San Francisco, California, USA
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+          <div class="block-7">
+            <h3 class="footer-heading mb-4">About Us</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius
+              quae reiciendis distinctio voluptates sed dolorum excepturi iure
+              eaque, aut unde.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
+          <h3 class="footer-heading mb-4">Quick Links</h3>
+          <ul class="list-unstyled">
+            <li><a href="#">Supplements</a></li>
+            <li><a href="#">Vitamins</a></li>
+            <li><a href="#">Diet &amp; Nutrition</a></li>
+            <li><a href="#">Tea &amp; Coffee</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="block-5 mb-5">
+            <h3 class="footer-heading mb-4">Contact Info</h3>
+            <ul class="list-unstyled">
+              <li class="address">
+                203 Fake St. Mountain View, San Francisco, California, USA
+              </li>
+              <li class="phone">
+                <a href="tel://23923929210">+2 392 3929 210</a>
+              </li>
+              <li class="email">emailaddress@domain.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row pt-5 mt-5 text-center">
+        <div class="col-md-12">
+          <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All rights reserved | This template is made with
+            <i class="icon-heart" aria-hidden="true"></i> by
+            <a href="https://colorlib.com" target="_blank" class="text-primary"
+              >Colorlib</a
+            >
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

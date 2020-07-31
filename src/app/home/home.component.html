@@ -1,0 +1,376 @@
+<div class="site-wrap">
+  <div class="site-navbar py-2">
+    <div class="search-wrap">
+      <div class="container">
+        <a href="#" class="search-close js-search-close"
+          ><span class="icon-close2"></span
+        ></a>
+        <form action="#" method="post">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search keyword and hit enter..."
+          />
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <div class="site-logo">
+            <a href="index.html" class="js-logo-clone">VNVC Việt Nam</a>
+          </div>
+        </div>
+        <div class="main-nav d-none d-lg-block">
+          <nav
+            class="site-navigation text-right text-md-center"
+            role="navigation"
+          >
+            <ul class="site-menu js-clone-nav d-none d-lg-block">
+              <li class="active"><a href="index.html">Trang chủ</a></li>
+              <li class="has-children">
+                <a [routerLink]="['/dsgoivc']">Danh mục vắc xin</a>
+                <ul class="dropdown">
+                  <li class="has-children" *ngFor="let item of dmuc">
+                    <a (click)="ChuyenTrang(item.idDanhMuc)">{{item.tenDmuc}}</a>
+                </ul>
+              </li>
+              <li><a href="about.html">Đặt mua vắc xin</a></li>
+              <li><a href="contact.html">Bảng giá</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="icons">
+          <a href="#" class="icons-btn d-inline-block js-search-open"
+            ><span class="icon-search"></span
+          ></a>
+          <a href="cart.html" class="icons-btn d-inline-block bag">
+            <span class="icon-shopping-bag"></span>
+            <span class="number">2</span>
+          </a>
+          <a
+            href="#"
+            class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"
+            ><span class="icon-menu"></span
+          ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="site-blocks-cover"
+    style="background-image: url('assets/images/hero_1.jpg');"
+  >
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 mx-auto order-lg-2 align-self-center">
+          <div class="site-block-cover-content text-center">
+            <h2 class="sub-title">Chất lượng là vàng, thay ngàn lời nói</h2>
+            <h1>VNVC Việt Nam xin chào</h1>
+            <p>
+              <a href="#" class="btn btn-primary px-5 py-3">Mua ngay</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-section">
+    <div class="container">
+      <div class="row align-items-stretch section-overlap">
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="banner-wrap bg-primary h-100">
+            <a href="#" class="h-100">
+              <h5>
+                Free <br />
+                Shipping
+              </h5>
+              <p>
+                Amet sit amet dolor
+                <strong
+                  >Lorem, ipsum dolor sit amet consectetur adipisicing.</strong
+                >
+              </p>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="banner-wrap h-100">
+            <a href="#" class="h-100">
+              <h5>
+                Season <br />
+                Sale 50% Off
+              </h5>
+              <p>
+                Amet sit amet dolor
+                <strong
+                  >Lorem, ipsum dolor sit amet consectetur adipisicing.</strong
+                >
+              </p>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="banner-wrap bg-warning h-100">
+            <a href="#" class="h-100">
+              <h5>
+                Buy <br />
+                A Gift Card
+              </h5>
+              <p>
+                Amet sit amet dolor
+                <strong
+                  >Lorem, ipsum dolor sit amet consectetur adipisicing.</strong
+                >
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="title-section text-center col-12">
+          <h2 class="text-uppercase">Danh sách các gói vắc xin phổ biến</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6 col-lg-4 text-center item mb-4" *ngFor="let item of data" >
+          <div class="card" >
+            <img src="{{item.anhGoiVc}}"  style="width:100%">
+            <h1>{{item.tenGoi}}</h1>
+            <p class="price">{{item.giaGoiTiem}}&#8363;</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="row mt-5">
+        <div class="col-12 text-center">
+          <a href="shop.html" class="btn btn-primary px-4 py-3"
+            >Xem danh sách chi tiết</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-section bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="title-section text-center col-12">
+          <h2 class="text-uppercase">New Products</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 block-3 products-wrap">
+          <div class="nonloop-block-3 owl-carousel">
+
+            <div class="text-center item mb-4">
+              <a href="shop-single.html"> <img src="assets/images/product_03.png" alt="Image"></a>
+              <h3 class="text-dark"><a href="shop-single.html">Vắc xin trị cúm Umcka Cold Care</a></h3>
+              <p class="price">560.000&#8363;</p>
+            </div>
+
+            <div class="text-center item mb-4">
+              <a href="shop-single.html"> <img src="assets/images/product_01.png" alt="Image"></a>
+              <h3 class="text-dark"><a href="shop-single.html">Umcka Cold Care</a></h3>
+              <p class="price">240.000&#8363;</p>
+            </div>
+
+            <div class="text-center item mb-4">
+              <a href="shop-single.html"> <img src="assets/images/product_02.png" alt="Image"></a>
+              <h3 class="text-dark"><a href="shop-single.html">Umcka Cold Care</a></h3>
+              <p class="price">320.00&#8363;</p>
+            </div>
+
+            <div class="text-center item mb-4">
+              <a href="shop-single.html"> <img src="assets/images/product_04.png" alt="Image"></a>
+              <h3 class="text-dark"><a href="shop-single.html">Umcka Cold Care</a></h3>
+              <p class="price">120.00&#8363;</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="title-section text-center col-12">
+          <h2 class="text-uppercase">Phản hồi của khách hàng</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 block-3 products-wrap">
+          <div class="nonloop-block-3 no-direction owl-carousel">
+            <div class="testimony">
+              <blockquote>
+                <img
+                  src="assets/images/person_1.jpg"
+                  alt="Image"
+                  class="img-fluid w-25 mb-4 rounded-circle"
+                />
+                <p>
+                  &ldquo;Trước đây, tôi từng đưa cháu đến nhiều nơi tiêm phòng. Ở những nơi khác thì tốn tiền khám nhưng ở VNVC thì được miễn phí khám cả trước và sau tiêm. Chuyển sang tiêm phòng ở VNVC, cháu tôi còn được các cô nhân viên ở trung tâm gọi điện thoại hỏi thăm vết tiêm, có bị sốt không và nếu có phản ứng gì bất thường thì nhắc gọi đến trung tâm để có bác sĩ hướng dẫn nữa.&rdquo;
+                </p>
+              </blockquote>
+
+              <p>&mdash; Bác Nguyễn Thị Quý</p>
+            </div>
+
+            <div class="testimony">
+              <blockquote>
+                <img
+                  src="assets/images/person_2.jpg"
+                  alt="Image"
+                  class="img-fluid w-25 mb-4 rounded-circle"
+                />
+                <p>
+                  &ldquo;Một trong những yếu tố tạo nên sự khác biệt của VNVC là đội ngũ chuyên gia, bác sĩ, nhân viên y tế giàu kinh nghiệm với quy trình khám trước và sau tiêm, chăm sóc khách hàng bài bản, tinh thần thái độ ân cần, nhẹ nhàng..&rdquo;
+                </p>
+              </blockquote>
+
+              <p>&mdash; Ngô Chí Dũng</p>
+            </div>
+
+            <div class="testimony">
+              <blockquote>
+                <img
+                  src="assets/images/person_3.jpg"
+                  alt="Image"
+                  class="img-fluid w-25 mb-4 rounded-circle"
+                />
+                <p>
+                  &ldquo;Trung tâm tiêm chủng VNVC bố trí có cả khu vui chơi cho bé. Bé nhà tôi chơi 30 phút chờ theo dõi phản ứng sau tiêm thì không muốn về. Lần sau nói đi tiêm thì không sợ mà còn rất hào hứng.&rdquo;
+                </p>
+              </blockquote>
+
+              <p>&mdash; Anh Trần Đông Quân</p>
+            </div>
+
+            <div class="testimony">
+              <blockquote>
+                <img
+                  src="assets/images/person_4.jpg"
+                  alt="Image"
+                  class="img-fluid w-25 mb-4 rounded-circle"
+                />
+                <p>
+                  &ldquo;Vào ngày đầu đưa bé đi tiêm chủng tại trung tâm, bác sĩ tư vấn dành hẳn 30 phút để nhập lại lịch sử tiêm chủng của bé vào hệ thống để xem còn thiếu mũi nào không và tư vấn các mũi cần tiêm.Khi đến lịch tiêm nhắc hoặc đến thời điểm cần tiêm vắc xin khác, trung tâm sẽ gọi điện thoại đến nhắc lịch và tư vấn nên mình không sợ quên các mũi tiêm nhắc của con&rdquo;
+                </p>
+              </blockquote>
+
+              <p>&mdash; Anh: Trần Quang Minh</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="site-section bg-secondary bg-image"
+    style="background-image: url('assets/images/bg_2.jpg');"
+  >
+    <div class="container">
+      <div class="row align-items-stretch">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <a
+            href="#"
+            class="banner-1 h-100 d-flex"
+            style="background-image: url('assets/images/bg_1.jpg');"
+          >
+            <div class="banner-1-inner align-self-center">
+              <h2>Sự quan trọng của vắc xin</h2>
+              <p>
+                "Cuộc sống của hàng triệu trẻ em đã được cứu sống nhờ vắc xin, hàng triệu người có cơ hội sống khỏe mạnh hơn,
+                 có cơ hội học tập, vui chơi, đọc và viết tốt hơn,
+                 di chuyển tự do mà không có sự đau khổ bởi dị tật cơ thể ”
+                 <b><i>Tổng thống Nelson Mandela</i></b>
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <a
+            href="#"
+            class="banner-1 h-100 d-flex"
+            style="background-image: url('assets/images/bg_2.jpg');"
+          >
+            <div class="banner-1-inner ml-auto align-self-center">
+              <h2>Sứ mệnh</h2>
+              <p>
+                Với sứ mệnh “Bảo vệ con yêu khỏi vi khuẩn” chúng tôi luôn sẵn sàng đồng hành cùng với bố mẹ để đem đến cho con yêu một khởi đầu khỏe mạnh,
+                 đẩy lùi bệnh tật và phát triển toàn diện trong tương lai.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+          <div class="block-7">
+            <h3 class="footer-heading mb-4">Giới thiệu</h3>
+            <p>
+              Công ty Cổ phần Vắc xin Việt Nam được thành lập với mong muốn chung sức với các đơn vị của ngành y tế dự phòng cung cấp cho người dân dịch vụ tiêm chủng vắc xin an toàn, hiện đại và dịch vụ cao cấp.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
+          <h3 class="footer-heading mb-4">Truy cập nhanh</h3>
+          <ul class="list-unstyled">
+            <li><a href="#">Gói vắc xin cho trẻ em tiền học đường</a></li>
+            <li><a href="#">Gói vắc xin cho trẻ em vị thành niên</a></li>
+            <li><a href="#">Gói vắc xin cho người trưởng thành</a></li>
+
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="block-5 mb-5">
+            <h3 class="footer-heading mb-4">Thông tin liên hệ</h3>
+            <ul class="list-unstyled">
+              <li class="address">
+               <b>Địa chỉ:</b> 198 Hoàng Văn Thụ, Q. Phú Nhuận,tp.Hồ Chí Minh
+              </li>
+              <li class="phone">
+                <a >Hotline: 028 7300 6595</a>
+              </li>
+              <li class="email">vnvcvietnam@gmail.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row pt-5 mt-5 text-center">
+        <div class="col-md-12">
+          <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All rights reserved | This template is made with
+            <i class="icon-heart" aria-hidden="true"></i> by
+            <a href="https://colorlib.com" target="_blank" class="text-primary"
+              >ChiCuongGroup</a
+            >
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

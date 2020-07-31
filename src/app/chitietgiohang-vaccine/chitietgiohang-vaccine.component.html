@@ -1,0 +1,11 @@
+<table class="table site-block-order-table mb-5" *ngIf="vacineList.length>0">
+  
+  <tbody>
+    <tr  *ngFor="let items of vacineList">
+      <td>{{ items.tenVaccine }}</td>
+      <td> {{ items.soLuong }}</td>
+      <td> {{ items.giaBan }}</td>
+    </tr>
+  </tbody>
+
+</table>
